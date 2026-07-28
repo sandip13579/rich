@@ -6,6 +6,8 @@ from typing import Callable, NamedTuple, Sequence, Tuple
 
 from rich._unicode_data import load as load_cell_table
 
+import unicodedata
+
 CellSpan = Tuple[int, int, int]
 
 _span_get_cell_len = itemgetter(2)
@@ -55,6 +57,11 @@ def get_character_cell_size(character: str, unicode_version: str = "auto") -> in
         int: Number of cells (0, 1 or 2) occupied by that character.
     """
     codepoint = ord(character)
+
+    print("=" * 30)
+    print("Character:", character)
+    print("Codepoint:", codepoint)
+
     if codepoint and codepoint < 32 or 0x07F <= codepoint < 0x0A0:
         return 0
     table = load_cell_table(unicode_version).widths
@@ -75,6 +82,10 @@ def get_character_cell_size(character: str, unicode_version: str = "auto") -> in
             lower_bound = index + 1
         else:
             return width
+    #we only reach here if binary search fails
+
+    if unicodedata.east_asian_width(character) == "A":
+        return 2
     return 1
 
 
