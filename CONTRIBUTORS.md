@@ -19,6 +19,7 @@ The following people have contributed to the development of Rich:
 - [Jonathan Eunice](https://github.com/jonathan-3play)
 - [Aryaz Eghbali](https://github.com/AryazE)
 - [Oleksis Fraga](https://github.com/oleksis)
+- [Sandip Panigrahi](https://github.com/sandip13579)
 - [Andy Gimblett](https://github.com/gimbo)
 - [Kai Giokas](https://github.com/kaisforza)
 - [Tom Gooding](https://github.com/TomJGooding)
